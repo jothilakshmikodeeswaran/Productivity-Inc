@@ -15,7 +15,7 @@ app.use(express.json());
 
 app.use("/api/users", usersRouter);
 app.use("/api/projects", projectsRouter);
-app.use("/api/tasks", tasksRouter);
+app.use("/api/tasks", tasksRouter); // Nested under /projects/:projectId/tasks
 
 db.once("open", () => {
   app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));
